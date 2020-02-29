@@ -1,0 +1,31 @@
+Homework 1
+-Greedy & Dynamic Programming
+
+Problema 1
+	Am folosit o functie de comparare care verifica daca cele doua numere, foliste ca parametru
+	sunt in ordine descrescatoare.
+	Am citit cate numere sunt in fisier, iar numerele le-am salvat intr-un vector.
+	Functia get_result intoarce diferenta dintre scoruri si este scrisa in fisierul de output.
+	Pentru rezolvarea cerintei, am folosit un algoritm greedy. Prima oara, are loc sortarea 
+	numerelor. Se parcurge vectorul deja sorat si se adauga la scorurile celor doi jucatori
+	elementele vectorului(ordinea este Tuzgu - Ritza). In final, se face return la difernta 
+	dintre scoruri.
+
+Problema 2
+	Citirea din fiser si scrierea in acesta sunt aproape la fel (se citeste si numar de 
+	elemente scoase din vector la inceput).
+	Pentru a fi scoase cele k numere, am folosit un algoritm care calculeaza diferentele dintre
+	elementele succesive, ordonate descrescator. Se cauta diferenta cea mai mare din vector
+	si pe pozitie impara (sa fie randul Ritzei cand trebuie sa ia elementul). Se ia indexul 
+	acesteia, pentru a fi eliminat din vectorul cu numere.
+	La final, dupa ce elementele sunt scoase, se aplica algoritmul greedy de la problema 1.	
+
+Problema 3
+	Citirea din fisier si scrierea in el sunt la fel ca la problema 1.
+	Pentru a afla rezultatul, am folosit un algoritm dynamic programming, inspirat de pe 		https://leetcode.com/articles/stone-game/# .
+	dp[i][j] reprezinta solutia cand in vector mai raman elementele de la i la j.
+	Pentru a afla a carui runda este, se calculeaza "paritatea" jucatorului.
+	Daca este radul lui Tuzgu, el isi doreste maximizarea scorului si alege maximul dintre 
+	cele doua posibiltati, de a alege elementul din drepata sau stanga. 
+	Daca este randul Ritzei, doreste minimizarea scorului si va alege minimul pentru a ii 
+	scadea din scorul lui Tuzgu.
